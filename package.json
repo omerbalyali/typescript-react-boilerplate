@@ -1,0 +1,12 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [],
+  "author": "Ömer Balyali <omerbalyali@gmail.com> (http://www.omerbalyali.com/)",
+  "license": "MIT"
+}
