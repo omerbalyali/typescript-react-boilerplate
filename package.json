@@ -2,11 +2,61 @@
   "name": "typescript-boilerplate",
   "version": "0.1.0",
   "description": "",
+  "author": "Ömer Balyali <omerbalyali@gmail.com> (http://www.omerbalyali.com/)",
+  "license": "MIT",
+  "keywords": [],
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "",
+    "build": "wp --config webpack.config.ts --mode production",
+    "start": "wp --config webpack.config.ts --mode development",
+    "watch": "nodemon --watch ./*.{ts,js} --exec \"pnpm start\"",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "check-types": "tsc"
   },
-  "keywords": [],
-  "author": "Ömer Balyali <omerbalyali@gmail.com> (http://www.omerbalyali.com/)",
-  "license": "MIT"
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mini-css-extract-plugin": "^1.4.1",
+    "@types/node": "^14.14.37",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/webpack-plugin-serve": "^1.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "autoprefixer": "^10.2.5",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "css-loader": "^5.2.1",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-compat": "^3.9.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "fork-ts-checker-webpack-plugin": "^6.2.1",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.4.1",
+    "nodemon": "^2.0.7",
+    "postcss": "^8.2.9",
+    "postcss-import": "^14.0.1",
+    "postcss-loader": "^5.2.0",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "stylelint": "^13.12.0",
+    "stylelint-webpack-plugin": "^2.1.1",
+    "ts-loader": "^8.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.31.2",
+    "webpack-merge": "^5.7.3",
+    "webpack-nano": "^1.1.1",
+    "webpack-plugin-serve": "^1.4.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
