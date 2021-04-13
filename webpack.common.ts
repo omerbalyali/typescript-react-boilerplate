@@ -47,15 +47,25 @@ const cssRule: webpack.RuleSetRule = {
   sideEffects: true,
 };
 
+const svgRule: webpack.RuleSetRule = {
+  test: /\.svg$/,
+  type: 'asset',
+};
+
 const bitmapRule: webpack.RuleSetRule = {
   test: /\.(png|jpg)$/,
   type: 'asset',
   parser: { dataUrlCondition: { maxSize: 15000 } },
 };
 
-const svgRule: webpack.RuleSetRule = {
-  test: /\.svg$/,
-  type: 'asset',
+const fontRule: webpack.RuleSetRule = {
+  test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/, // Match .woff?v=1.1.1.
+  use: {
+    options: {
+      type: 'asset',
+      parser: { dataUrlCondition: { maxSize: 50000 } },
+    },
+  },
 };
 
 const rules: webpack.RuleSetRule[] = [
@@ -73,11 +83,10 @@ const forkTsCheckerPlugin = new ForkTsCheckerPlugin({
   },
 });
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 const extractCssPlugin: any = new MiniCssExtractPlugin({
   filename: '[name].[contenthash].css',
 });
-/* eslint-enable @typescript-eslint/no-explicit-any */
 
 const stylelintPlugin = new StylelintPlugin({
   configFile: path.resolve(__dirname, 'stylelint.config.js'),

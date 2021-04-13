@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2019",
     "module": "commonjs",
     "moduleResolution": "node",
-    "baseUrl": "./haha",
+    "baseUrl": "./",
     "outDir": "./dist",
     "jsx": "react",
     "noEmit": true,
