@@ -13,20 +13,18 @@ const mode = argv.mode as MODES;
 const devMode = mode === 'development' ? true : false;
 
 const extensions = {
-  typescript: ['.js', '.ts', '.tsx'],
+  javascript: ['.js', '.ts', '.tsx'],
 };
 
 /* RULES */
 
-const typescriptRule: webpack.RuleSetRule = {
-  test: /\.tsx?$/,
-  exclude: /node_modules/,
+const javascriptRule: webpack.RuleSetRule = {
+  test: /\.(js|tsx?)?$/,
   use: {
-    loader: 'ts-loader',
-    options: {
-      transpileOnly: true,
-    },
+    loader: 'babel-loader',
   },
+  include: path.join(__dirname, 'src'),
+  exclude: /node_modules/,
 };
 
 const cssRule: webpack.RuleSetRule = {
@@ -69,10 +67,11 @@ const fontRule: webpack.RuleSetRule = {
 };
 
 const rules: webpack.RuleSetRule[] = [
-  typescriptRule,
+  javascriptRule,
   cssRule,
   svgRule,
   bitmapRule,
+  fontRule,
 ];
 
 /* PLUGINS */

@@ -12,7 +12,7 @@ const config: webpack.Configuration = {
     rules: common.rules,
   },
   resolve: {
-    extensions: common.extensions.typescript,
+    extensions: common.extensions.javascript,
   },
   output: {
     clean: true,
